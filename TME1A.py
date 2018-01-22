@@ -22,7 +22,7 @@ thon = SoccerTeam(name="ThonTeam")
 pyteam.add("PyPlayer",Strat()) #Strategie qui ne fait rien
 thon.add("ThonPlayer",RandomStrategy())   #Strategie aleatoire
 
-
+#lol
 #Creation d'une partie
 simu = Simulation(pyteam,thon)
 #Jouer et afficher la partie
