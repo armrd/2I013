@@ -8,21 +8,24 @@ class RandomStrategy(Strategy):
     def __init__(self):
         Strategy.__init__(self,"Random")
     def compute_strategy(self,state,id_team,id_player):
-        return SoccerAction(Vector2D.create_random(),Vector2D.create_random())
+        return SoccerAction(Vector2D.create_random(-0.5,0.5),Vector2D.create_random(-1,1))
 
-class Strat(Strategy):
-    def __init__(self):
-        Strategy.__init__(self,"Essai")
-    def compute_strategy(self,state,id_team,id_player):
-        return SoccerAction(Vector2D.create_random(),vector2D.create_random())
+#class FonceurStrategy(Strategy):
+ #   def __init__(self):
+  #      Strategy.__init__(self,"Random")
+   # def compute_strategy(self,state,id_team,id_player):
+    #    return SoccerAction(,)
+
     
 ## Creation d'une equipe
 pyteam = SoccerTeam(name="PyTeam")
 thon = SoccerTeam(name="ThonTeam")
-pyteam.add("PyPlayer",Strat()) #Strategie qui ne fait rien
+pyteam.add("PyPlayer",RandomStrategy()) #Strategie qui ne fait rien
 thon.add("ThonPlayer",RandomStrategy())   #Strategie aleatoire
 
-#lol
+vitesse=state.ball.position
+
+
 #Creation d'une partie
 simu = Simulation(pyteam,thon)
 #Jouer et afficher la partie
